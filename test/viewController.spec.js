@@ -1,4 +1,4 @@
-import { changeView , goTo} from '../src/lib/viewController.js';
+import { loadView , goTo} from '../src/lib/viewController.js';
 import { initialize} from "@googlemaps/jest-mocks";
 import { downloadView } from '../src/views/downloadView.js';
 import { viewDashboard } from '../src/views/dashboardView.js';
@@ -30,9 +30,9 @@ test('Add view', () => {
     const container = document.getElementById('content-page')
     
     // expect(changeView('#/')).toStrictEqual(container.appendChild(viewFreeMap()))
-    expect(changeView('#/download')).toStrictEqual(container.appendChild(downloadView()))
-    expect(changeView('#/dashboard')).toStrictEqual(container.appendChild(viewDashboard()))
-    expect(changeView('#/graphics')).toStrictEqual(container.appendChild(viewGraphics()))
+    expect(loadView('download')).toStrictEqual(container.appendChild(downloadView()))
+    expect(loadView('dashboard')).toStrictEqual(container.appendChild(viewDashboard()))
+    expect(loadView('graphics')).toStrictEqual(container.appendChild(viewGraphics()))
     // expect(changeView('')).toStrictEqual(container.appendChild(viewFreeMap()))
 
   });
